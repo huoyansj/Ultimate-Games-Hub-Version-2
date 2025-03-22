@@ -1,80 +1,603 @@
 <!DOCTYPE html>
-</style>
 <html lang="en">
-    <head>
-      <link id="stylesheet" rel="stylesheet" href="styles.css">
-      <script src="theme-switcher.js"></script>
-        <script>
-            function create() {
-                var url = "https://forms.gle/XDjeitRYayhEB4FH7";
-                var win = window.open();
-                win.document.body.style.margin = '0';
-                win.document.body.style.height = '100vh';
-                var iframe = win.document.createElement('iframe');
-                iframe.style.border = 'none';
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.margin = '0';
-                iframe.src = url;
-                win.document.body.appendChild(iframe);
-            }
-            </script>
-<div class="heading">
-    <h1>Ultimate Game Hub V3</h1>
-    </div>
-        <nav>
-            <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="emulators.html">Emulators</a></li>
-                <li><a href="randomizer.html">Randomizer</a></li>
-                <li><a href="themes.html">Themes</a></li>
-                <li><a href="javascript:create()">Feedback</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Game Hub V3</title>
+    <link id="stylesheet" rel="stylesheet" href="styles.css">
+    <script src="theme-switcher.js"></script>
 </head>
-            <body>
-                <h3>Responses to Feedback 4:</h3>
-                <ul>
-                    <li>Not much to say this week, there were suggestions for making a minecraft server and connecting it to the site. If anyone knows how to set up an eaglercraft server or can find out information on it, I could potentially do such a thing, so maybe keep an eye out for that</li>
-                    <li>Fun Fact of the Week: People use the site most on Tuesday for some reason (not even a joke, DDAM)</li>
-                  </ul>
-                <br>
-                <h3>February 15</h3>
-                <ul>
-                    <li>Added Themes for the site</li>
-                  </ul>
-                <br>
-                <h3>February 7</h3>
-                <ul>
-                    <li>Added Search Bar. Search for game names or by tags: "NEW", *FIXED*, and "FUN" (FUN games are the best. Disagree and see what happens...)</li>
-                    <li>Haven't gotten any suggestions for themes. If you want custom color themes, send feedback</li>
-                    <li>Added Oregon Trail, Learn 2 Fly, Learn to Fly 3, and Retro Bowl College</li>
-                  </ul>
-                <br>
-                <h3>January 31</h3>
-                <ul>
-                    <li>Added new games to randomizer</li>
-                    <li>Removed broken games from randomizer</li>
-                    <li>Took off more (known) broken games</li>
-                  </ul>
-                <br>
-                <h3>January 29</h3>
-                <ul>
-                    <li>Added Many New Games</li>
-                    <li>Removed broken games from randomizer</li>
-                    <li>Took off (known) broken games (except for FNAF. Only FNAF 1 and custom night are known to be working)</li>
-                    <li>Moved Updates to Homepage</li>
-                    <li>Made Updates tab into Game Randomizer</li>
-                  </ul>
-                <br>
-                <h3>January 20</h3>
-                <ul>
-                    <li>Added randomizer for games</li>
-                    <li>Added tabs for different pages</li>
-                    <li>Added preloaded games in emulator and added new proxy for emulated games</li>
-                    <li>Added feedback google forms
-                    <li>Took off (known) broken games from list</li>
-                    <li>Added FNAF</li>
-                  </ul>
-                </body>
+<body>
+    <!-- 语言切换器 -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="fr">Français</button>
+        <button class="lang-btn" data-lang="es">Español</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+    
+    <!-- 侧边导航栏 -->
+    <nav class="sidebar">
+        <div class="logo">
+            <!-- <img src="resources/logo.png" alt="Logo"> -->
+            <h1>Ultimate Game Hub</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i><span>首页</span></a></li>
+            <li><a href="randomizer.html"><i class="fas fa-random"></i><span>随机游戏</span></a></li>
+            
+            <!-- 游戏分类 -->
+            <li class="nav-category">
+                <span class="category-header"><i class="fas fa-gamepad"></i><span>游戏分类</span></span>
+                <ul class="category-links">
+                    <li><a href="#action-games"><i class="fas fa-running"></i><span>动作冒险</span></a></li>
+                    <li><a href="#puzzle-games"><i class="fas fa-puzzle-piece"></i><span>益智解谜</span></a></li>
+                    <li><a href="#arcade-games"><i class="fas fa-rocket"></i><span>经典街机</span></a></li>
+                    <li><a href="#casual-games"><i class="fas fa-coffee"></i><span>休闲游戏</span></a></li>
+                    <li><a href="#skill-games"><i class="fas fa-trophy"></i><span>技巧游戏</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 搜索栏 -->
+        <div class="search-bar">
+            <input type="text" placeholder="搜索游戏...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- 所有游戏 -->
+        <section class="game-section">
+            <h2>所有游戏</h2>
+            
+            <!-- 动作冒险游戏 -->
+            <h3 class="category-title" id="action-games">动作冒险游戏</h3>
+            <div class="game-grid">
+                <div class="game-card">
+                    <a href="vex3/index.html">
+                        <div class="game-thumbnail">
+                            <img src="vex3/splash.jpg" alt="Vex 3" onerror="this.src='resources/game-default.svg'" loading="lazy">
+                            <div class="game-name">Vex 3</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="vex4/index.html">
+                        <div class="game-thumbnail">
+                            <img src="vex4/splash.jpg" alt="Vex 4" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Vex 4</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="vex5/index.html">
+                        <div class="game-thumbnail">
+                            <img src="vex5/splash.jpg" alt="Vex 5" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Vex 5</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="vex6/index.html">
+                        <div class="game-thumbnail">
+                            <img src="vex6/assets/icon.jpeg" alt="Vex 6" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Vex 6</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="vex7/index.html">
+                        <div class="game-thumbnail">
+                            <img src="vex7/splash.jpg" alt="Vex 7" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Vex 7</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="run-3/index.html">
+                        <div class="game-thumbnail">
+                            <img src="run-3/img/menu/Run3.png" alt="Run 3" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Run 3</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="subway-surfers/index.html">
+                        <div class="game-thumbnail">
+                            <img src="subway-surfers/splash.jpg" alt="Subway Surfers" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Subway Surfers</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="slope/index.html">
+                        <div class="game-thumbnail">
+                            <img src="slope/TemplateData/progressLogo.Dark.png" alt="Slope" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Slope</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="tunnelrush/index.html">
+                        <div class="game-thumbnail">
+                              <img src="tunnelrush/splash.png" alt="Tunnel Rush" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Tunnel Rush</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="tanuki-sunset/index.html">
+                        <div class="game-thumbnail">
+                            <img src="tanuki-sunset/splash.png" alt="Tanuki Sunset" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Tanuki Sunset</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="adanceoffireandice/index.html">
+                        <div class="game-thumbnail">
+                            <img src="adanceoffireandice/image.png" alt="A Dance of Fire And Ice" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">A Dance of Fire And Ice</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="cubefield/index.html">
+                        <div class="game-thumbnail">
+                            <img src="cubefield/image.png" alt="Cubefield" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Cubefield</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="time-shooter/index.html">
+                        <div class="game-thumbnail">
+                            <img src="time-shooter/logo.png" alt="Time Shooter" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Time Shooter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="time-shooter-3/index.html">
+                        <div class="game-thumbnail">
+                            <img src="time-shooter-3/logo.png" alt="Time Shooter 3" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Time Shooter 3</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="unfairmario/index.html">
+                        <div class="game-thumbnail">
+                            <img src="unfairmario/image.png" alt="Unfair Mario" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Unfair Mario</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="underrun/index.html">
+                        <div class="game-thumbnail">
+                            <img src="underrun/image.png" alt="Underrun" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Underrun</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 益智解谜游戏 -->
+            <h3 class="category-title" id="puzzle-games">益智解谜游戏</h3>
+            <div class="game-grid">
+                <div class="game-card">
+                    <a href="2048/index.html">
+                        <div class="game-thumbnail">
+                            <img src="2048/meta/apple-touch-icon.png" alt="2048" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">2048</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="tetris/index.html">
+                        <div class="game-thumbnail">
+                            <img src="tetris/media/background/logo.png" alt="Tetris" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Tetris</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="rubikscube/index.html">
+                        <div class="game-thumbnail">
+                            <img src="rubikscube/image.png" alt="Rubik's Cube" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Rubik's Cube</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="ovo/index.html">
+                        <div class="game-thumbnail">
+                            <img src="ovo/ovo3.png" alt="OvO" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">OvO</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="hextris/index.html">
+                        <div class="game-thumbnail">
+                            <img src="hextris/images/icons/apple-touch-512.png" alt="Hextris" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Hextris</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="bloxorz/index.html">
+                        <div class="game-thumbnail">
+                            <img src="bloxorz/image.png" alt="Bloxorz" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Bloxorz</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="minesweeper/index.html">
+                        <div class="game-thumbnail">
+                            <img src="minesweeper/image.png" alt="Minesweeper" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Minesweeper</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="chess/index.html">
+                        <div class="game-thumbnail">
+                            <img src="chess/image.png" alt="Chess" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Chess</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="checkers/index.html">
+                        <div class="game-thumbnail">
+                            <img src="checkers/image.png" alt="Checkers" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Checkers</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="connect3/index.html">
+                        <div class="game-thumbnail">
+                            <img src="connect3/image.png" alt="Connect 3" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Connect 3</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="breaklock/index.html">
+                        <div class="game-thumbnail">
+                            <img src="breaklock/image.png" alt="BreakLock" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">BreakLock</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="babel-tower/index.html">
+                        <div class="game-thumbnail">
+                            <img src="babel-tower/art/art2.png" alt="Babel Tower" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Babel Tower</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 经典街机游戏 -->
+            <h3 class="category-title" id="arcade-games">经典街机游戏</h3>
+            <div class="game-grid">
+                <div class="game-card">
+                    <a href="pacman/index.html">
+                        <div class="game-thumbnail">
+                            <img src="pacman/img/start.png" alt="Pacman" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Pacman</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="snake/index.html">
+                        <div class="game-thumbnail">
+                            <img src="snake/image.png" alt="Snake" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Snake</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="spaceinvaders/index.html">
+                        <div class="game-thumbnail">
+                            <img src="spaceinvaders/image.png" alt="Space Invaders" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Space Invaders</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="tron/index.html">
+                        <div class="game-thumbnail">
+                            <img src="tron/image.png" alt="Tron" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Tron</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="asteroids/index.html">
+                        <div class="game-thumbnail">
+                            <img src="asteroids/image.png" alt="Asteroids" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Asteroids</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="breakout/index.html">
+                        <div class="game-thumbnail">
+                            <img src="breakout/image.png" alt="Breakout" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Breakout</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="doodlejump/index.html">
+                        <div class="game-thumbnail">
+                            <img src="doodlejump/image.png" alt="Doodle Jump" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Doodle Jump</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="flappybird/index.html">
+                        <div class="game-thumbnail">
+                            <img src="flappybird/image.png" alt="Flappy Bird" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Flappy Bird</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="chromedino/index.html">
+                        <div class="game-thumbnail">
+                            <img src="chromedino/image.png" alt="Chrome Dino" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Chrome Dino</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="mario-game/index.html">
+                        <div class="game-thumbnail">
+                            <img src="mario-game/image.png" alt="Mario Game" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Mario Game</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 休闲游戏 -->
+            <h3 class="category-title" id="casual-games">休闲游戏</h3>
+            <div class="game-grid">
+                <div class="game-card">
+                    <a href="cookieclicker/index.html">
+                        <div class="game-thumbnail">
+                            <img src="cookieclicker/image.png" alt="Cookie Clicker" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Cookie Clicker</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="sandspiel/index.html">
+                        <div class="game-thumbnail">
+                            <img src="sandspiel/image.png" alt="Sandspiel" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Sandspiel</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="tiny-fishing/index.html">
+                        <div class="game-thumbnail">
+                            <img src="tiny-fishing/thumb.png" alt="Tiny Fishing" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Tiny Fishing</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="bitlife/index.html">
+                        <div class="game-thumbnail">
+                            <img src="bitlife/logo.png" alt="BitLife" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">BitLife</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="idle-breakout/index.html">
+                        <div class="game-thumbnail">
+                            <img src="idle-breakout/assets/thumbnail.png" alt="Idle Breakout" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Idle Breakout</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="doge-miner/index.html">
+                        <div class="game-thumbnail">
+                            <img src="doge-miner/img/dogeminer_300x300.png" alt="Doge Miner" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Doge Miner</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="clicker-heroes-updated/index.html">
+                        <div class="game-thumbnail">
+                            <img src="clicker-heroes-updated/image.png" alt="Clicker Heroes" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Clicker Heroes</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="particle-clicker/index.html">
+                        <div class="game-thumbnail">
+                            <img src="particle-clicker/image.png" alt="Particle Clicker" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Particle Clicker</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="adarkroom/index.html">
+                        <div class="game-thumbnail">
+                            <img src="adarkroom/img/Logo1.jpg" alt="A Dark Room" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">A Dark Room</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="monkey-mart/index.html">
+                        <div class="game-thumbnail">
+                            <img src="monkey-mart/bg_loading.png" alt="Monkey Mart" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Monkey Mart</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 技巧游戏 -->
+            <h3 class="category-title" id="skill-games">技巧游戏</h3>
+            <div class="game-grid">
+                <div class="game-card">
+                    <a href="qwop/index.html">
+                        <div class="game-thumbnail">
+                            <img src="qwop/image.png" alt="QWOP" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">QWOP</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="racer/index.html">
+                        <div class="game-thumbnail">
+                            <img src="racer/image.png" alt="Racer" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Racer</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="stickman-hook/index.html">
+                        <div class="game-thumbnail">
+                            <img src="stickman-hook/image.png" alt="Stickman Hook" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Stickman Hook</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="two-ball-3d/index.html">
+                        <div class="game-thumbnail">
+                            <img src="two-ball-3d/image.png" alt="Two Ball 3D" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Two Ball 3D</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="smart-ball/index.html">
+                        <div class="game-thumbnail">
+                            <img src="smart-ball/image.png" alt="Smart Ball" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Smart Ball</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="rooftop-snipers/index.html">
+                        <div class="game-thumbnail">
+                            <img src="rooftop-snipers/image.png" alt="Rooftop Snipers" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Rooftop Snipers</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="retrobowl/index.html">
+                        <div class="game-thumbnail">
+                            <img src="retrobowl/img/image.png" alt="Retro Bowl" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Retro Bowl</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="drift-boss/index.html">
+                        <div class="game-thumbnail">
+                            <img src="drift-boss/drift-boss.png" alt="Drift Boss" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Drift Boss</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="drive-mad/index.html">
+                        <div class="game-thumbnail">
+                            <img src="drive-mad/image copy.png" alt="Drive Mad" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Drive Mad</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="subway-surfers-ny/index.html">
+                        <div class="game-thumbnail">
+                            <img src="subway-surfers-ny/image.png" alt="Subway Surfers NY" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Subway Surfers NY</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="motox3m/index.html">
+                        <div class="game-thumbnail">
+                            <img src="motox3m/moto-x3m.png" alt="Moto X3M" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Moto X3M</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="game-card">
+                    <a href="motox3m2/index.html">
+                        <div class="game-thumbnail">
+                            <img src="motox3m2/image.png" alt="Moto X3M 2" onerror="this.src='resources/game-default.svg'">
+                            <div class="game-name">Moto X3M 2</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 多语言支持 -->
+    <script src="languages.js"></script>
+    
+    <!-- 页面功能脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有图片添加懒加载属性
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+            });
+            
+            // 搜索功能
+            const searchInput = document.querySelector('.search-bar input');
+            const gameCards = document.querySelectorAll('.game-card');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                // 如果没有搜索词，显示所有分类标题
+                const categoryTitles = document.querySelectorAll('.category-title');
+                categoryTitles.forEach(title => {
+                    title.style.display = searchTerm === '' ? 'block' : 'none';
+                });
+                
+                // 过滤游戏卡片
+                gameCards.forEach(card => {
+                    const gameName = card.querySelector('.game-name').textContent.toLowerCase();
+                    if (gameName.includes(searchTerm) || searchTerm === '') {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

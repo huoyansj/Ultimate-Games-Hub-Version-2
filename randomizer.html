@@ -1,305 +1,184 @@
 <!DOCTYPE html>
-</style>
 <html lang="en">
-    <head>
-      <link id="stylesheet" rel="stylesheet" href="styles.css">
-      <script src="theme-switcher.js"></script>
-        <script>
-            function create() {
-                var url = "https://forms.gle/XDjeitRYayhEB4FH7";
-                var win = window.open();
-                win.document.body.style.margin = '0';
-                win.document.body.style.height = '100vh';
-                var iframe = win.document.createElement('iframe');
-                iframe.style.border = 'none';
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.margin = '0';
-                iframe.src = url;
-                win.document.body.appendChild(iframe);
-            }
-            </script>
-<div class="heading">
-    <h1>Ultimate Game Hub V3</h1>
-    </div>
-        <nav>
-            <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="emulators.html">Emulators</a></li>
-                <li><a href="randomizer.html">Randomizer</a></li>
-                <li><a href="themes.html">Themes</a></li>
-                <li><a href="javascript:create()">Feedback</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Game - Ultimate Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-            <body>
-          <style>
-            body {
-              text-align: center;
-            }
-            .random-value {
-              font-size: 2rem;
-              font-weight: bold;
-              padding: 20px;
-              border: 2px solid #000000;
-              display: inline-block;
-              margin-top: 20px;
-            }
-            a {
-              text-decoration: none;
-              font-weight: bold;
-            }
-          </style>
-          <div class="random-value" id="random-value">Click to begin</div>
-          <button onclick="startRandomizer()">Start Randomizing</button>
-        
-          <script>
-            const gamePaths = [
-              "/1",
-              "/10minutestilldawn",
-              "/2048",
-              "/abandoned-2",
-              "/achievementunlocked",
-              "/adanceoffireandice",
-              "/adarkroom",
-              "/adrenalinechallenge",
-              "/adventuredrivers",
-              "/ageofwar",
-              "/ages-of-conflict",
-              "/another-gentlemans-adventure",
-              "/astray",
-              "/asteroids",
-              "/astray",
-              "/avalanche",
-              "/awesome-tanks",
-              "/awesome-tanks-2",
-              "/babel-tower",
-              "/backcountry",
-              "/badicecream",
-              "/badicecream2",
-              "/badicecream3",
-              "/basketball-stars",
-              "/basketrandom",
-              "/bitlife",
-              "/blockblast",
-              "/bloons",
-              "/bloonstd",
-              "/bloonstd2",
-              "/blosics",
-              "/bloxorz",
-              "/bounceback",
-              "/boxingrandom",
-              "/brawl-stars-project-laser",
-              "/breaklock",
-              "/breakout",
-              "/castlehero",
-              "/checkers",
-              "/chess",
-              "/chromedino",
-              "/clicker-heroes-updated",
-              "/connect3",
-              "/conways-game-of-life",
-              "/cookieclicker",
-              "/core-ball",
-              "/crossy-road",
-              "/cubefield",
-              "/cut-the-rope",
-              "/dadish",
-              "/dadish-2",
-              "/dadish-3",
-              "/doge-miner",
-              "/doodlejump",
-              "/drift-boss",
-              "/drive-mad",
-              "/ducklife",
-              "/ducklife2",
-              "/ducklife3",
-              "/ducklife4",
-              "/dune",
-              "/edgesurf",
-              "/evilglitch",
-              "/evowars",
-              "/factoryballsforever",
-              "/Fancy-Pants-Adventure-World1",
-              "/fireboy-and-watergirl",
-              "/fireboy-and-watergirl-2",
-              "/fireboy-and-watergirl-3",
-              "/fireboy-and-watergirl-4",
-              "/fireboyandwatergirlintheforesttemple",
-              "/flappybird",
-              "/flashsonic",
-              "/FNAF1",
-              "/FNAFUltraCustomNight",
-              "/friday-night-funkin",
-              "/friendlyfire",
-              "/geometrydash",
-              "/getaway-shootout",
-              "/gons-io",
-              "/gopherkart",
-              "/gunspin",
-              "/hs-breaking-the-bank",
-              "/hs-escaping-the-prison",
-              "/hs-stealing-the-diamond",
-              "/hs-infiltrating-the-airship",
-              "/hs-fleeing-the-complex",
-              "/hextris",
-              "/iceagebabyadventure",
-              "/idle-breakout",
-              "/incremancer",
-              "/interactivebuddy",
-              "/jumpingfrogspuzzle",
-              "/konnekt",
-              "/learntofly",
-              "/learn2fly",
-              "/learntofly3",
-              "/maptroid",
-              "/mario-game",
-              "/mariokartflash",
-              "/minecraft0.30",
-              "/minecrafttd",
-              "/minesweeper",
-              "/monkey-mart",
-              "/motherload",
-              "/motox3m",
-              "/motox3m2",
-              "/n",
-              "/n-gon",
-              "/n-step-steve-part-1",
-              "/n-step-steve-part-2",
-              "/oregontrail",
-              "/ovo",
-              "/pacman",
-              "/pandemic1",
-              "/pandemic2",
-              "/particle-clicker",
-              "/pcbreakdown",
-              "/pcraft",
-              "/planet-life",
-              "/portalflash",
-              "/precision-client",
-              "/progress-knight-quest",
-              "/progress-knight-reborn",
-              "/pull-of-war",
-              "/pushback",
-              "/qwop",
-              "/racer",
-              "/radiusraid",
-              "/reach-the-core",
-              "/restless-wing-syndrome",
-              "/retrobowl",
-              "/retrobowlcollege",
-              "/retrohaunt",
-              "/riddleschool",
-              "/riddleschool2",
-              "/riddleschool3",
-              "/riddleschool4",
-              "/riddleschool5",
-              "/riddleschooltransfer",
-              "/riddleschooltransfer2",
-              "/rift-shift",
-              "/roadblocks",
-              "/rooftop-snipers",
-              "/rookie-bowman",
-              "/rubikscube",
-              "/run-3",
-              "/sandspiel",
-              "/scuba-gear",
-              "/shoppingcarthero",
-              "/sleepingbeauty",
-              "/slope",
-              "/smart-ball",
-              "/snake",
-              "/snowrider3d",
-              "/soccerrandom",
-              "/spacecompany",
-              "/spaceinvaders",
-              "/stickman-hook",
-              "/stickrpg",
-              "/stormthehouse",
-              "/stormthehouse2",
-              "/subway-surfers",
-              "/supermario63",
-              "/supermeatboy",
-              "/supersmashflash",
-              "/subway-surfers-ny",
-              "/tanuki-sunset",
-              "/temple-run-2",
-              "/tetris",
-              "/thechromaincident",
-              "/the-final-earth",
-              "/thereisnogame",
-              "/the-treasure",
-              "/time-shooter",
-              "/time-shooter-3",
-              "/tiny-fishing",
-              "/towermaster",
-              "/trace",
-              "/tron",
-              "/tunnelrush",
-              "/two-ball-3d",
-              "/underrun",
-              "/unfairmario",
-              "/vex3",
-              "/vex4",
-              "/vex5",
-              "/vex6",
-              "/vex7",
-              "/volleyrandom",
-              "/w-flash",
-              "/where-is-the-water",
-              "/worldshardestgame",
-              "/worldshardestgame2",
-              "/x-trench-run",
-              "/xx142b2.exe",
-              "/yohoho"
+<body>
+    <!-- 语言切换器 -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="fr">Français</button>
+        <button class="lang-btn" data-lang="es">Español</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+
+    <!-- 侧边导航栏 -->
+    <nav class="sidebar">
+        <div class="logo">
+            <!-- <img src="resources/logo.png" alt="Logo"> -->
+            <h1>Ultimate Game Hub</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>首页</span></a></li>
+            <li><a href="randomizer.html" class="active"><i class="fas fa-random"></i><span>随机游戏</span></a></li>
+            
+            <!-- 游戏分类 -->
+            <li class="nav-category">
+                <span class="category-header"><i class="fas fa-gamepad"></i><span>游戏分类</span></span>
+                <ul class="category-links">
+                    <li><a href="index.html#action-games"><i class="fas fa-running"></i><span>动作冒险</span></a></li>
+                    <li><a href="index.html#puzzle-games"><i class="fas fa-puzzle-piece"></i><span>益智解谜</span></a></li>
+                    <li><a href="index.html#arcade-games"><i class="fas fa-rocket"></i><span>经典街机</span></a></li>
+                    <li><a href="index.html#casual-games"><i class="fas fa-coffee"></i><span>休闲游戏</span></a></li>
+                    <li><a href="index.html#skill-games"><i class="fas fa-trophy"></i><span>技巧游戏</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <section class="randomizer-section">
+            <h2 id="randomizer-title">随机游戏</h2>
+            <p id="randomizer-desc">无法决定玩什么？让我们帮你选择一个随机游戏！</p>
+            
+            <div class="randomizer-container">
+                <div class="random-game" id="random-game">点击下方按钮获取随机游戏</div>
+                <button class="randomizer-btn" id="randomizer-btn">随机选择</button>
+            </div>
+            
+            <div class="game-preview" id="game-preview" style="display: none;">
+                <h3 id="preview-title">游戏预览</h3>
+                <div class="preview-container">
+                    <div class="game-thumbnail">
+                        <img src="" alt="Game Preview" id="preview-image" onerror="this.src='resources/game-default.svg'">
+                        <div class="game-name" id="preview-name"></div>
+                    </div>
+                    <div class="preview-info">
+                        <p id="preview-desc">加载游戏描述中...</p>
+                        <a href="#" class="play-btn" id="play-btn">开始游戏</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 多语言支持 -->
+    <script src="languages.js"></script>
+    
+    <!-- 随机游戏功能 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 游戏列表
+            const games = [
+                // 动作冒险
+                { name: "Vex 3", path: "vex3/index.html", image: "vex3/splash.jpg" },
+                { name: "Vex 4", path: "vex4/index.html", image: "vex4/splash.jpg" },
+                { name: "Vex 5", path: "vex5/index.html", image: "vex5/splash.jpg" },
+                { name: "Vex 6", path: "vex6/index.html", image: "vex6/assets/icon.jpeg" },
+                { name: "Vex 7", path: "vex7/index.html", image: "vex7/splash.jpg" },
+                { name: "Run 3", path: "run-3/index.html", image: "run-3/img/menu/Run3.png" },
+                { name: "Subway Surfers", path: "subway-surfers/index.html", image: "subway-surfers/splash.jpg" },
+                { name: "Slope", path: "slope/index.html", image: "slope/TemplateData/progressLogo.Dark.png" },
+                { name: "Tunnel Rush", path: "tunnelrush/index.html", image: "tunnelrush/splash.png" },
+                { name: "Tanuki Sunset", path: "tanuki-sunset/index.html", image: "tanuki-sunset/splash.png" },
+                { name: "A Dance of Fire And Ice", path: "adanceoffireandice/index.html", image: "adanceoffireandice/image.png" },
+                { name: "Cubefield", path: "cubefield/index.html", image: "cubefield/image.png" },
+                { name: "Time Shooter", path: "time-shooter/index.html", image: "time-shooter/logo.png" },
+                { name: "Time Shooter 3", path: "time-shooter-3/index.html", image: "time-shooter-3/logo.png" },
+                { name: "Unfair Mario", path: "unfairmario/index.html", image: "unfairmario/image.png" },
+                { name: "Underrun", path: "underrun/index.html", image: "underrun/image.png" },
+                
+                // 益智解谜
+                { name: "2048", path: "2048/index.html", image: "2048/meta/apple-touch-icon.png" },
+                { name: "Tetris", path: "tetris/index.html", image: "tetris/media/background/logo.png" },
+                { name: "Rubik's Cube", path: "rubikscube/index.html", image: "rubikscube/image.png" },
+                { name: "OvO", path: "ovo/index.html", image: "ovo/ovo3.png" },
+                { name: "Hextris", path: "hextris/index.html", image: "hextris/images/icons/apple-touch-512.png" },
+                { name: "Bloxorz", path: "bloxorz/index.html", image: "bloxorz/image.png" },
+                { name: "Minesweeper", path: "minesweeper/index.html", image: "minesweeper/image.png" },
+                { name: "Chess", path: "chess/index.html", image: "chess/image.png" },
+                { name: "Checkers", path: "checkers/index.html", image: "checkers/image.png" },
+                { name: "Connect 3", path: "connect3/index.html", image: "connect3/image.png" },
+                { name: "BreakLock", path: "breaklock/index.html", image: "breaklock/image.png" },
+                { name: "Babel Tower", path: "babel-tower/index.html", image: "babel-tower/art/art2.png" },
+                
+                // 经典街机
+                { name: "Pacman", path: "pacman/index.html", image: "pacman/img/start.png" },
+                { name: "Snake", path: "snake/index.html", image: "snake/image.png" },
+                { name: "Space Invaders", path: "spaceinvaders/index.html", image: "spaceinvaders/image.png" },
+                { name: "Tron", path: "tron/index.html", image: "tron/image.png" },
+                { name: "Asteroids", path: "asteroids/index.html", image: "asteroids/image.png" },
+                { name: "Breakout", path: "breakout/index.html", image: "breakout/image.png" },
+                { name: "Doodle Jump", path: "doodlejump/index.html", image: "doodlejump/image.png" },
+                { name: "Flappy Bird", path: "flappybird/index.html", image: "flappybird/image.png" },
+                { name: "Chrome Dino", path: "chromedino/index.html", image: "chromedino/image.png" },
+                { name: "Mario Game", path: "mario-game/index.html", image: "mario-game/image.png" },
+                
+                // 休闲游戏
+                { name: "Cookie Clicker", path: "cookieclicker/index.html", image: "cookieclicker/image.png" },
+                { name: "Sandspiel", path: "sandspiel/index.html", image: "sandspiel/image.png" },
+                { name: "Tiny Fishing", path: "tiny-fishing/index.html", image: "tiny-fishing/thumb.png" },
+                { name: "BitLife", path: "bitlife/index.html", image: "bitlife/logo.png" },
+                { name: "Idle Breakout", path: "idle-breakout/index.html", image: "idle-breakout/assets/thumbnail.png" },
+                { name: "Doge Miner", path: "doge-miner/index.html", image: "doge-miner/img/dogeminer_300x300.png" },
+                { name: "Clicker Heroes", path: "clicker-heroes-updated/index.html", image: "clicker-heroes-updated/image.png" },
+                { name: "Particle Clicker", path: "particle-clicker/index.html", image: "particle-clicker/image.png" },
+                { name: "A Dark Room", path: "adarkroom/index.html", image: "adarkroom/img/Logo1.jpg" },
+                { name: "Monkey Mart", path: "monkey-mart/index.html", image: "monkey-mart/bg_loading.png" },
+                
+                // 技巧游戏
+                { name: "QWOP", path: "qwop/index.html", image: "qwop/image.png" },
+                { name: "Racer", path: "racer/index.html", image: "racer/image.png" },
+                { name: "Stickman Hook", path: "stickman-hook/index.html", image: "stickman-hook/image.png" },
+                { name: "Two Ball 3D", path: "two-ball-3d/index.html", image: "two-ball-3d/image.png" },
+                { name: "Smart Ball", path: "smart-ball/index.html", image: "smart-ball/image.png" },
+                { name: "Rooftop Snipers", path: "rooftop-snipers/index.html", image: "rooftop-snipers/image.png" },
+                { name: "Retro Bowl", path: "retrobowl/index.html", image: "retrobowl/img/image.png" },
+                { name: "Drift Boss", path: "drift-boss/index.html", image: "drift-boss/drift-boss.png" },
+                { name: "Drive Mad", path: "drive-mad/index.html", image: "drive-mad/image copy.png" },
+                { name: "Subway Surfers NY", path: "subway-surfers-ny/index.html", image: "subway-surfers-ny/image.png" },
+                { name: "Moto X3M", path: "motox3m/index.html", image: "motox3m/moto-x3m.png" },
+                { name: "Moto X3M 2", path: "motox3m2/index.html", image: "motox3m2/image.png" }
             ];
-        
-            // Function to generate a random index using crypto
-            function getRandomIndex() {
-              const array = new Uint32Array(1);
-              window.crypto.getRandomValues(array);
-              return array[0] % gamePaths.length;
+            
+            // 元素
+            const randomGame = document.getElementById('random-game');
+            const randomizerBtn = document.getElementById('randomizer-btn');
+            const gamePreview = document.getElementById('game-preview');
+            const previewImage = document.getElementById('preview-image');
+            const previewName = document.getElementById('preview-name');
+            const playBtn = document.getElementById('play-btn');
+            
+            // 随机选择游戏
+            function selectRandomGame() {
+                const randomIndex = Math.floor(Math.random() * games.length);
+                const selectedGame = games[randomIndex];
+                
+                randomGame.textContent = selectedGame.name;
+                previewImage.src = selectedGame.image;
+                previewImage.onerror = function() {
+                    this.src = 'resources/game-default.svg';
+                };
+                
+                previewName.textContent = selectedGame.name;
+                playBtn.href = selectedGame.path;
+                
+                gamePreview.style.display = 'block';
+                
+                // 滚动到游戏预览
+                gamePreview.scrollIntoView({ behavior: 'smooth' });
             }
-        
-            // Function to open the link in an iframe in a new tab
-            function openLinkInIframe(url) {
-              var win = window.open();
-              win.document.body.style.margin = '0';
-              win.document.body.style.height = '100vh';
-              var iframe = win.document.createElement('iframe');
-              iframe.style.border = 'none';
-              iframe.style.width = '100%';
-              iframe.style.height = '100%';
-              iframe.style.margin = '0';
-              iframe.src = url;
-              win.document.body.appendChild(iframe);
-            }
-        
-            function startRandomizer() {
-              const randomValueElement = document.getElementById('random-value');
-              const startTime = Date.now();
-        
-              let intervalId = setInterval(() => {
-                const randomIndex = getRandomIndex();  // Use crypto-based random index
-                const currentPath = gamePaths[randomIndex];
-                const displayName = currentPath.replace(/^\/|\/$/g, '');  // Remove slashes for display
-        
-                // Make the value clickable
-                randomValueElement.innerHTML = `<a href="#" onclick="openLinkInIframe('https://stealth-laylow.netlify.app${currentPath}')">${displayName}</a>`;
-        
-              }, 50); // Flip every 50ms
-        
-              // Stop after 3 seconds
-              setTimeout(() => {
-                clearInterval(intervalId);
-                const finalPath = gamePaths[getRandomIndex()];
-                const displayName = finalPath.replace(/^\/|\/$/g, '');  // Remove slashes for display
-                randomValueElement.innerHTML = `<a href="#" onclick="openLinkInIframe('https://stealth-laylow.netlify.app${finalPath}')">${displayName}</a>`;
-              }, 1500);  // Stop after 3 seconds (3000ms)
-            }
-          </script>
-        
-        </body>
-        </html>
-         </head>
+            
+            // 点击随机按钮
+            randomizerBtn.addEventListener('click', selectRandomGame);
+        });
+    </script>
+</body>
+</html>

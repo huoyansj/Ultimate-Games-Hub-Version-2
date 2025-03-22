@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+</style>
+<html lang="en">
+    <head>
+      <link id="stylesheet" rel="stylesheet" href="styles.css">
+      <script src="theme-switcher.js"></script>
+        <script>
+            function create() {
+                var url = "https://forms.gle/XDjeitRYayhEB4FH7";
+                var win = window.open();
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+            }
+            </script>
+<div class="heading">
+    <h1>Ultimate Game Hub V3</h1>
+    </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="emulators.html">Emulators</a></li>
+                <li><a href="randomizer.html">Randomizer</a></li>
+                <li><a href="themes.html">Themes</a></li>
+                <li><a href="javascript:create()">Feedback</a></li>
+            </ul>
+        </nav>
+        <style>
+        .buttons {
+          text-align: center;
+          padding-top: 20px;
+        }
+        </style>
+</head>
+<div class="buttons">
+            <body>
+              <button onclick="changeCSS('theme1')">Blue</button>
+              <button onclick="changeCSS('theme2')">Red</button>
+              <button onclick="changeCSS('theme3')">Rainbow</button>
+              <button onclick="changeCSS('theme4')">Discrete</button>
+              <button onclick="changeCSS('theme5')">Default</button>
+                </body>
+              </div>
