@@ -51,4 +51,10 @@ subway-surfers/Build/*.data
 subway-surfers/Build/*.wasm
 subway-surfers/Build/*.js.gz
 subway-surfers/Build/*.data.gz
-subway-surfers/Build/*.framework.js.gz 
+subway-surfers/Build/*.framework.js.gz
+gamehub-main/10minutestilldawn/Build/*.unityweb
+gamehub-main/10minutestilldawn/Build/*.data
+ages-of-conflict/Build/*.unityweb
+ages-of-conflict/Build/*.data
+reach-the-core/*.js
+reach-the-core/*.data 
