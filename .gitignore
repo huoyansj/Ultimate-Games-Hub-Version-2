@@ -1,0 +1,54 @@
+# macOS系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# 备份和未使用的文件夹
+unused_games/
+unused_large_files/
+
+# IDE和编辑器文件
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 依赖目录
+node_modules/
+vendor/
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境配置文件
+.env
+.env.local
+.env.*.local
+
+# 构建输出
+dist/
+build/
+out/
+
+# 缓存文件
+.cache/
+.temp/
+.tmp/
+
+# 其他
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 大型游戏文件 (超过25MB限制)
+subway-surfers/Build/*.unityweb
+subway-surfers/Build/*.data
+subway-surfers/Build/*.wasm
+subway-surfers/Build/*.js.gz
+subway-surfers/Build/*.data.gz
+subway-surfers/Build/*.framework.js.gz 
