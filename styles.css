@@ -201,6 +201,8 @@ body {
     margin-left: 220px;
     width: calc(100% - 220px);
     padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* 搜索栏 */
@@ -348,6 +350,7 @@ body {
     .main-content {
         margin-left: 70px;
         width: calc(100% - 70px);
+        padding: 15px;
     }
 
     .nav-links a {
@@ -609,5 +612,30 @@ body {
     .lang-btn {
         padding: 4px 8px;
         font-size: 0.7rem;
+    }
+}
+
+/* 广告容器样式 */
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background: rgba(26, 28, 37, 0.3);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.top-ad {
+    width: 100%;
+    max-width: 728px;
+    min-height: 90px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .top-ad {
+        max-width: 320px;
+        min-height: 100px;
     }
 }
